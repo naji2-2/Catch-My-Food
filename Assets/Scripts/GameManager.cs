@@ -13,21 +13,35 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
     private int score = 0;
+    private int attackCount = 0;
 
-    void Awake() {
+    void Awake()
+    {
         if (instance == null) {
             instance = this;
         }
     }
 
-    public void IncreaseFood() {
+    public void IncreaseFood()
+    {
         score += 2;
         text.SetText(score.ToString());
     }
 
-    public void DecreaseAttack() {
-        score -= 5;
-        text.SetText(score.ToString());
+    public void DecreaseAttack()
+    {
+        attackCount++;
+        if (attackCount < 5) {
+            score -= 5;
+            text.SetText(score.ToString());
+        } else {
+            SetGameOver();
+        }
+    }
+
+    public void SetGameOver()
+    {
+        Debug.Log("Game Over");
     }
 
 }

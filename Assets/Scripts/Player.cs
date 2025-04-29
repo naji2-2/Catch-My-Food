@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
             transform.position += moveTo;
         }
     }
+    
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Food") {
             GameManager.instance.IncreaseFood();
