@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Food") {
-            Debug.Log("Food");
+            GameManager.instance.IncreaseFood();
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Attack") {
-            Debug.Log("Attack");
+            GameManager.instance.DecreaseAttack();
             Destroy(collision.gameObject);
         }
     }
