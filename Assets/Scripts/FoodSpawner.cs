@@ -14,24 +14,28 @@ public class FoodSpawner : MonoBehaviour
 
     void Start()
     {
-        StartFoodRouter();
+        StartFoodRoutine();
     }
 
-    void StartFoodRouter() {
+    void StartFoodRoutine() {
         StartCoroutine("FoodRoutine");
+    }
+
+    public void StopFoodRoutine()
+    {
+        StopCoroutine("FoodRoutine");
     }
 
     IEnumerator FoodRoutine() {
         yield return new WaitForSeconds(3f);
-        
-        while (true)
-        {
+
+        while (true) {
             int posX = Random.Range(0, arrPosX.Length);     // 생성 위치를 결정
             int index = Random.Range(0, foods.Length);      // 종류를 결정
             SpawnFood(posX, index);
 
             yield return new WaitForSeconds(spawnInterval);
-        }
+        } 
         
     }
 

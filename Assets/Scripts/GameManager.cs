@@ -48,6 +48,16 @@ public class GameManager : MonoBehaviour
 
     public void SetGameOver()
     {
+        FoodSpawner foodSpawner = FindObjectOfType<FoodSpawner>();
+        if (foodSpawner != null) {
+            foodSpawner.StopFoodRoutine();
+        }
+
+        AttackSpawner attackSpawner = FindObjectOfType<AttackSpawner>();
+        if (attackSpawner != null) {
+            attackSpawner.StopAttackRoutine();
+        }
+
         Invoke("ShowGameOverPanel", 1f);
     }
 
@@ -58,6 +68,16 @@ public class GameManager : MonoBehaviour
 
     public void SetGameComplete()
     {
+        FoodSpawner foodSpawner = FindObjectOfType<FoodSpawner>();
+        if (foodSpawner != null) {
+            foodSpawner.StopFoodRoutine();
+        }
+
+        AttackSpawner attackSpawner = FindObjectOfType<AttackSpawner>();
+        if (attackSpawner != null) {
+            attackSpawner.StopAttackRoutine();
+        }
+        
         Invoke("ShowGameCompletePanel", 1f);
     }
 

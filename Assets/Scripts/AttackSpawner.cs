@@ -14,23 +14,27 @@ public class AttackSpawner : MonoBehaviour
 
     void Start()
     {
-        StartAttactRouter();
+        StartAttactRoutine();
     }
 
-    void StartAttactRouter() {
+    void StartAttactRoutine() {
         StartCoroutine("AttactRoutine");
+    }
+
+    public void StopAttackRoutine()
+    {
+        StopCoroutine("AttactRoutine");
     }
 
     IEnumerator AttactRoutine() {
         yield return new WaitForSeconds(3f);
         
-        while (true)
-        {
-            int posX = Random.Range(0, arrPosX.Length);     // 생성 위치를 결정
-            int index = Random.Range(0, items.Length);      // 종류를 결정
-            SpawnAttact(posX, index);
+        while (true) {
+        int posX = Random.Range(0, arrPosX.Length);     // 생성 위치를 결정
+        int index = Random.Range(0, items.Length);      // 종류를 결정
+        SpawnAttact(posX, index);
 
-            yield return new WaitForSeconds(spawnInterval);
+        yield return new WaitForSeconds(spawnInterval);
         }
         
     }
