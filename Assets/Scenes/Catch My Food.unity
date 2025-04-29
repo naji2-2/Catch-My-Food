@@ -1094,7 +1094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 558053609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 827190557}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &558053609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,7 +1245,7 @@ MonoBehaviour:
   - {fileID: 3263552497542670222, guid: 759d811d5b2f95f4eb47a39e0e073b86, type: 3}
   - {fileID: 3263552497542670222, guid: 4297335d36df12f4e8d6aa55c46d2318, type: 3}
   - {fileID: 3263552497542670222, guid: 9761dac2f256f8e45901704afb54772e, type: 3}
-  spawnInterval: 1
+  spawnInterval: 0.5
 --- !u!1 &880550635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,13 +2781,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: d03a735225bd125468cfd0d79c4f6f25, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 827190557}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2866,7 +2878,7 @@ MonoBehaviour:
   items:
   - {fileID: 5992640779214173772, guid: af49166db2e045749b13eeb0a4650a75, type: 3}
   - {fileID: 5992640779214173772, guid: d1f4cb08213875849a38b135873b7922, type: 3}
-  spawnInterval: 3
+  spawnInterval: 1
 --- !u!1 &2100029793
 GameObject:
   m_ObjectHideFlags: 0

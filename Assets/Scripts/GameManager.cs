@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         score += 2;
         text.SetText(score.ToString());
-        if (score >= 10) {
+        if (score >= 100) {
             SetGameComplete();   
         }
     }
