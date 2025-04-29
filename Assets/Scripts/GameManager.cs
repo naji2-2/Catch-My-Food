@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI text;
     private int score = 0;
     private int attackCount = 0;
+
+    [SerializeField]
+    private GameObject[] gamePanels;
 
     void Awake()
     {
@@ -27,7 +31,7 @@ public class GameManager : MonoBehaviour
         score += 2;
         text.SetText(score.ToString());
         if (score >= 10) {
-            SetGamComplete();
+            SetGameComplete();   
         }
     }
 
@@ -44,12 +48,27 @@ public class GameManager : MonoBehaviour
 
     public void SetGameOver()
     {
-        Debug.Log("Game Over");
+        Invoke("ShowGameOverPanel", 1f);
+    }
+
+    void ShowGameOverPanel()
+    {
+        gamePanels[0].SetActive(true);
+    }
+
+    public void SetGameComplete()
+    {
+        Invoke("ShowGameCompletePanel", 1f);
+    }
+
+    void ShowGameCompletePanel()
+    {
+        gamePanels[1].SetActive(true);
     }
     
-    public void SetGamComplete()
+    public void PlayAgain()
     {
-        Debug.Log("Complete");
+        SceneManager.LoadScene("Catch My Food");
     }
 
 }
