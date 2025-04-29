@@ -7,7 +7,7 @@ public class Food : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
-    private float minY = -4;
+    private float minY = -4.5f;
 
     void Start()
     {
