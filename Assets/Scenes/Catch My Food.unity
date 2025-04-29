@@ -442,6 +442,7 @@ MonoBehaviour:
   - {fileID: 3263552497542670222, guid: 759d811d5b2f95f4eb47a39e0e073b86, type: 3}
   - {fileID: 3263552497542670222, guid: 4297335d36df12f4e8d6aa55c46d2318, type: 3}
   - {fileID: 3263552497542670222, guid: 9761dac2f256f8e45901704afb54772e, type: 3}
+  spawnInterval: 1
 --- !u!1 &1097656587
 GameObject:
   m_ObjectHideFlags: 0

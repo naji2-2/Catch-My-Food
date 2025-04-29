@@ -9,11 +9,29 @@ public class FoodSpawner : MonoBehaviour
 
     private float[] arrPosX = { -6.6f, -5.5f, -4.4f, -3.3f, -2.2f, -1.1f, 0f, 1.1f, 2.2f, 3.3f, 4.4f, 5.5f, 6.6f };
 
+    [SerializeField]
+    private float spawnInterval;
+
     void Start()
     {
-        int posX = Random.Range(0, arrPosX.Length);     // 생성 위치를 결정
-        int index = Random.Range(0, foods.Length);      // 종류를 결정
-        SpawnFood(posX, index);
+        StartFoodRouter();
+    }
+
+    void StartFoodRouter() {
+        StartCoroutine("FoodRoutine");
+    }
+
+    IEnumerator FoodRoutine() {
+        yield return new WaitForSeconds(3f);
+        
+        while (true)
+        {
+            int posX = Random.Range(0, arrPosX.Length);     // 생성 위치를 결정
+            int index = Random.Range(0, foods.Length);      // 종류를 결정
+            SpawnFood(posX, index);
+
+            yield return new WaitForSeconds(spawnInterval);
+        }
         
     }
 
