@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     {
         score += 2;
         text.SetText(score.ToString());
+        if (score >= 10) {
+            SetGamComplete();
+        }
     }
 
     public void DecreaseAttack()
@@ -42,6 +45,11 @@ public class GameManager : MonoBehaviour
     public void SetGameOver()
     {
         Debug.Log("Game Over");
+    }
+    
+    public void SetGamComplete()
+    {
+        Debug.Log("Complete");
     }
 
 }
