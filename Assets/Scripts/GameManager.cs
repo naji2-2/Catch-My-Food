@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null) {
+        if (instance == null)
+        {
             instance = this;
         }
     }
@@ -30,18 +31,22 @@ public class GameManager : MonoBehaviour
     {
         score += 2;
         text.SetText(score.ToString());
-        if (score >= 100) {
-            SetGameComplete();   
+        if (score >= 100)
+        {
+            SetGameComplete();
         }
     }
 
     public void DecreaseAttack()
     {
         attackCount++;
-        if (attackCount < 5) {
+        if (attackCount < 5)
+        {
             score -= 5;
             text.SetText(score.ToString());
-        } else {
+        }
+        else
+        {
             SetGameOver();
         }
     }
@@ -49,12 +54,14 @@ public class GameManager : MonoBehaviour
     public void SetGameOver()
     {
         FoodSpawner foodSpawner = FindObjectOfType<FoodSpawner>();
-        if (foodSpawner != null) {
+        if (foodSpawner != null)
+        {
             foodSpawner.StopFoodRoutine();
         }
 
         AttackSpawner attackSpawner = FindObjectOfType<AttackSpawner>();
-        if (attackSpawner != null) {
+        if (attackSpawner != null)
+        {
             attackSpawner.StopAttackRoutine();
         }
 
@@ -69,15 +76,17 @@ public class GameManager : MonoBehaviour
     public void SetGameComplete()
     {
         FoodSpawner foodSpawner = FindObjectOfType<FoodSpawner>();
-        if (foodSpawner != null) {
+        if (foodSpawner != null)
+        {
             foodSpawner.StopFoodRoutine();
         }
 
         AttackSpawner attackSpawner = FindObjectOfType<AttackSpawner>();
-        if (attackSpawner != null) {
+        if (attackSpawner != null)
+        {
             attackSpawner.StopAttackRoutine();
         }
-        
+
         Invoke("ShowGameCompletePanel", 1f);
     }
 
@@ -85,7 +94,18 @@ public class GameManager : MonoBehaviour
     {
         gamePanels[1].SetActive(true);
     }
-    
+
+public void GotAttackPanel()
+    {
+        gamePanels[2].SetActive(true);
+        Invoke("FalseAttackPanel", 0.2f);
+    }
+
+    public void FalseAttackPanel()
+    {
+        gamePanels[2].SetActive(false);
+    }
+
     public void PlayAgain()
     {
         SceneManager.LoadScene("Catch My Food");

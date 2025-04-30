@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Attack") {
             GameManager.instance.DecreaseAttack();
+            GameManager.instance.GotAttackPanel();
             Destroy(collision.gameObject);
         }
     }
