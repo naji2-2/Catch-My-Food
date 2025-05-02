@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Food") {
+            AudioSource EatFoodSound = GetComponent<AudioSource>();
+            EatFoodSound.Play();
             GameManager.instance.IncreaseFood();
             Destroy(collision.gameObject);
         }
