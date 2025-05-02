@@ -2724,6 +2724,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  audioSource: {fileID: 1707500003}
+  EatClip: {fileID: 8300000, guid: 492efab43fda7b242bf92aff92f87480, type: 3}
+  AttackClip: {fileID: 8300000, guid: 9a9f379a37e83e941998c741b80d4e18, type: 3}
 --- !u!58 &1707500001
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,9 +2800,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 492efab43fda7b242bf92aff92f87480, type: 3}
-  m_Resource: {fileID: 8300000, guid: 492efab43fda7b242bf92aff92f87480, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

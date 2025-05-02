@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 0;
 
+    public AudioSource audioSource;
+    public AudioClip EatClip;
+    public AudioClip AttackClip;
+
     void Start()
     {
 
@@ -28,12 +32,14 @@ public class Player : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Food") {
-            AudioSource EatFoodSound = GetComponent<AudioSource>();
-            EatFoodSound.Play();
+            audioSource.clip = EatClip;
+            audioSource.Play();
             GameManager.instance.IncreaseFood();
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Attack") {
+            audioSource.clip = AttackClip;
+            audioSource.Play();
             GameManager.instance.DecreaseAttack();
             GameManager.instance.GotAttackPanel();
             Destroy(collision.gameObject);
