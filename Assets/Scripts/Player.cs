@@ -31,13 +31,20 @@ public class Player : MonoBehaviour
     }
     
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Food") {
+        if (collision.gameObject.tag == "Food")
+        {
             audioSource.clip = EatClip;
             audioSource.Play();
             GameManager.instance.IncreaseFood();
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.tag == "Attack") {
+        else if (collision.gameObject.tag == "Coin")
+        {
+            GameManager.instance.IncreaseCoin();
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Attack")
+        {
             audioSource.clip = AttackClip;
             audioSource.Play();
             GameManager.instance.DecreaseAttack();

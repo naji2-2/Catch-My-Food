@@ -37,6 +37,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void IncreaseCoin()
+    {
+        score += 5;
+        text.SetText(score.ToString());
+        if (score >= 100)
+        {
+            SetGameComplete();
+        }
+    }
+
     public void DecreaseAttack()
     {
         attackCount++;
