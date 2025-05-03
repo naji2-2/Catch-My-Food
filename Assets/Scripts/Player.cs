@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip EatClip;
     public AudioClip AttackClip;
+    public AudioClip CoinClip;
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Coin")
         {
+            audioSource.clip = CoinClip;
+            audioSource.Play();
             GameManager.instance.IncreaseCoin();
             Destroy(collision.gameObject);
         }
