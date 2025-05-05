@@ -531,6 +531,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226332711}
   m_CullTransparentMesh: 1
+--- !u!1 &313529546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313529548}
+  - component: {fileID: 313529547}
+  m_Layer: 0
+  m_Name: CoinSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &313529547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313529546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cf4688c02173f4496e2f2a797f5ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 8206313898948364270, guid: 61b5b2db153278f40b9ea6e30ca6c4fe, type: 3}
+  spawnInterval: 8
+--- !u!4 &313529548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313529546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.49461, y: 1.53518, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &314116254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2773,7 @@ MonoBehaviour:
   audioSource: {fileID: 1707500003}
   EatClip: {fileID: 8300000, guid: 492efab43fda7b242bf92aff92f87480, type: 3}
   AttackClip: {fileID: 8300000, guid: 9a9f379a37e83e941998c741b80d4e18, type: 3}
+  CoinClip: {fileID: 8300000, guid: 95aade0b4c203084c9089e035e2b4316, type: 3}
 --- !u!58 &1707500001
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3154,7 +3201,7 @@ MonoBehaviour:
   items:
   - {fileID: 5992640779214173772, guid: af49166db2e045749b13eeb0a4650a75, type: 3}
   - {fileID: 5992640779214173772, guid: d1f4cb08213875849a38b135873b7922, type: 3}
-  spawnInterval: 1
+  spawnInterval: 1.5
 --- !u!1 &2100029793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,3 +3353,4 @@ SceneRoots:
   - {fileID: 148597045}
   - {fileID: 1077647896}
   - {fileID: 827190556}
+  - {fileID: 313529548}

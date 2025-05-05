@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Attack
+  - Coin
   layers:
   - Default
   - TransparentFX

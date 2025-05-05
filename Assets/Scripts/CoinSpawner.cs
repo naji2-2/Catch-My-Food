@@ -28,7 +28,7 @@ public class CoinSpawner : MonoBehaviour
     }
 
     IEnumerator CoinRoutine() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(7f);
 
         while (true) {
             int posX = Random.Range(0, arrPosX.Length);
